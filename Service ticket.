@@ -1,0 +1,34 @@
+Subject: New service account with mailbox and Power Automate licence: Private Banker Meeting Scheduler (POC)
+Summary
+Please create a dedicated, non-personal service account for the Private Banker Meeting Scheduler. The account will own the solution's Power Automate flows and their connections, and its own mailbox will receive customer replies about meeting requests. No separate shared mailbox is needed.
+Business justification
+The scheduler's automated flows run when no banker is signed in: when a customer replies to a meeting proposal, when a booking needs confirming, and on a daily housekeeping run. Automated flows run as the account that owns their connections, so they need a dedicated account rather than an individual's. This also stops the solution depending on one person's account, which would break if they left or changed role. The account will not write to CRM; CRM records are written by the app as the signed-in banker.
+Requested
+Account
+Suggested name: svc-pbs-scheduler@[domain] (or as per naming standards)
+Display name: Private Bank Scheduler
+Type: user account (not a shared mailbox), non-interactive or service use
+Owner: [YOUR NAME], [TEAM]
+Licences
+Exchange Online mailbox (e.g. via Microsoft 365 / Exchange Online Plan 1 or equivalent)
+Power Automate Premium (or equivalent licence covering premium connectors, needed for Dataverse)
+Mailbox
+Standard user mailbox, able to receive email from external senders (customers reply to it)
+Its calendar will hold the booked meetings and send invitations to customers and colleagues
+Full Access (read/write) for: [YOUR WORK ACCOUNT, e.g. firstname.lastname@domain], so I can monitor replies and calendar entries during the POC
+Power Platform access
+Environment Maker role (and the Basic User security role) in the POC environment: [POC ENVIRONMENT NAME]
+The same will be needed later in test and production
+Sign-in and security
+Please advise the approved approach for service accounts and MFA or conditional access, so the account's Power Automate connections don't expire through repeated sign-in prompts
+Credentials to be held by: [YOUR NAME / TEAM]; storage as per policy (e.g. password vault)
+Calendar and rooms
+The account must be able to see colleagues' free/busy (tenant default is usually enough)
+Meeting rooms used by the scheduler should auto-accept bookings from this account: [ROOM MAILBOX ADDRESSES]
+Not requested now (possible future request)
+Delegate access to bankers' calendars and Send As permission, if we later decide that meeting invitations should come from the banker rather than the scheduler account.
+Environment: POC / non-production
+Data: customer names and email addresses, meeting times; no account or financial data
+Requested by: [YOUR NAME], [ROLE], [CONTACT]
+Required by: [DATE]
+Replace the square-bracket fields before you submit. If your service desk has a separate form for licences or Power Platform roles, items 2 and 4 may need their own tickets. I can also make this a doc if you'd rather keep or share it.
